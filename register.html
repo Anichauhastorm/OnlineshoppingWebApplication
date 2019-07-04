@@ -1,0 +1,156 @@
+{% extends 'index.html' %}
+{% block content %}
+{% load static %}
+{% if user.is_authenticated %}
+<h2 class="registerbackground" style="margin:200px 0px 0px 200px; color:white !important;">You Need to logout First</h2>
+{% else %}
+<div class="registerbackground" style="margin-left:20px;">
+<div class="col-sm-4 register1">
+  <div id="myCarousel" class="carousel slide" data-interval="2000" data-ride="carousel" style="width:100% !important;">
+                                            <ol class="carousel-indicators">
+                                                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                                <li data-target="#myCarousel" data-slide-to="1"></li>
+                                                <li data-target="#myCarousel" data-slide-to="2"></li>
+                                                <li data-target="#myCarousel" data-slide-to="3"></li>
+                                            </ol>
+                                            <div class="carousel-inner bd">
+                                              <div class="item active">
+                                                  <img src="{% static "iphone8.jpg" %}" class="img-responsive imregister">
+                                              </div>
+                                              <div class="item">
+                                                  <img src="{% static "honor.png" %}" class="img-responsive imregister">
+                                              </div>
+                                              <div class="item">
+                                                  <img src="{% static "mi.jpg" %}" class="img-responsive imregister">
+                                              </div>
+                                              <div class="item">
+                                                  <img src="{% static "google.jpg" %}" class="img-responsive imregister">
+                                              </div>
+                                              <div class="item">
+                                                  <img src="{% static "m20.jpg" %}" class="img-responsive imregister">
+                                              </div>
+                                            </div>
+                                            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                                                <span class=""></span>
+                                                <span class="sr-only">Previous</span>
+                                            </a>
+                                            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                                                <span class=""></span>
+                                                <span class="sr-only">Next</span>
+                                            </a>
+                                        </div>
+
+</div>
+<div class="col-sm-4 "style="margin:80px 0px 0px 20px;">
+  <h2 align="center" style="color:white; font-family:Montserrat,sans-serif !important;">Register now to buy and sell on</h2>
+  <h2 align="center" style="color:white;">QuickShop</h2>
+  <form method="post" class="inline">
+    {% if messages %}
+  {% for message in messages %}
+  <div class="alert alert-{{ message.tags}}">
+   {{ message }}
+  </div>
+  {% endfor %}
+    {% endif %}
+    {% csrf_token %}
+      <div class="form-group" >
+      <br/>
+      <div class="input-group">
+        <div class="input-group-addon">
+      <span class="glyphicon glyphicon-user" style="color:blue;"></span>
+    </div>
+      {{ form.username }}
+      </div>
+        {% if form.username.help_text %}
+          <small style="display:none">{{ form.username.help_text }}</small>
+        {% endif %}
+        {% for error in form.username.errors %}
+        <p style="color: red">{{ error }}</p>
+        {% endfor %}
+      </div>
+      <div class="form-group" >
+      <div class="input-group">
+        <div class="input-group-addon">
+      <span class="glyphicon glyphicon-envelope" style="color:blue;"></span>
+    </div>
+      {{ form.email }}
+      </div>
+        {% if form.email.help_text %}
+          <small style="display:none">{{ form.email.help_text }}</small>
+        {% endif %}
+        {% for error in form.email.errors %}
+        <p style="color: red">{{ error }}</p>
+        {% endfor %}
+      </div>
+      <div class="form-group" >
+      <div class="input-group">
+        <div class="input-group-addon">
+      <span class="glyphicon glyphicon-arrow-right" style="color:blue;"></span>
+    </div>
+      {{ form.password1 }}
+      </div>
+        {% if form.password1.help_text %}
+          <small style="display:none">{{ form.password1.help_text }}</small>
+        {% endif %}
+        {% for error in form.password1.errors %}
+        <p style="color: red">{{ error }}</p>
+        {% endfor %}
+      </div>
+      <div class="form-group" >
+      <div class="input-group">
+        <div class="input-group-addon">
+      <span class="glyphicon glyphicon-arrow-right" style="color:blue;"></span>
+    </div>
+      {{ form.password2 }}
+      </div>
+        {% if form.password2.help_text %}
+          <small style="display:none">{{ form.password2e.help_text }}</small>
+        {% endif %}
+        {% for error in form.password2.errors %}
+        <p style="color: red">{{ error }}</p>
+        {% endfor %}
+      </div>
+      <br/>
+    <button class="btn btn-primary btn-block"type="submit">Sign up</button>
+
+  </form>
+  </div>
+
+<div class="col-sm-4 register1">
+  <div id="myCarousel" class="carousel slide" data-interval="2000" data-ride="carousel" style="width:100% !important;">
+                                            <ol class="carousel-indicators">
+                                                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                                <li data-target="#myCarousel" data-slide-to="1"></li>
+                                                <li data-target="#myCarousel" data-slide-to="2"></li>
+                                                <li data-target="#myCarousel" data-slide-to="3"></li>
+                                            </ol>
+                                            <div class="carousel-inner bd">
+                                              <div class="item active">
+                                                  <img src="{% static "iphone8.jpg" %}" class="img-responsive imregister">
+                                              </div>
+                                              <div class="item">
+                                                  <img src="{% static "honor.png" %}" class="img-responsive imregister">
+                                              </div>
+                                              <div class="item">
+                                                  <img src="{% static "mi.jpg" %}" class="img-responsive imregister">
+                                              </div>
+                                              <div class="item">
+                                                  <img src="{% static "google.jpg" %}" class="img-responsive imregister">
+                                              </div>
+                                              <div class="item">
+                                                  <img src="{% static "m20.jpg" %}" class="img-responsive imregister">
+                                              </div>
+                                            </div>
+                                            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                                                <span class=""></span>
+                                                <span class="sr-only">Previous</span>
+                                            </a>
+                                            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                                                <span class=""></span>
+                                                <span class="sr-only">Next</span>
+                                            </a>
+                                        </div>
+                                        </div>
+                                        </div>
+  {% endif %}
+{% endblock %}

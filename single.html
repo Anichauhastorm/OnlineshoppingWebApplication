@@ -1,0 +1,428 @@
+{% extends 'index.html' %}
+{% block content %}
+{% load static %}
+<style>
+  h3 {
+    font-size: 18px;
+    max-width: 80%;
+  }
+  .checked{
+    color:green;
+  
+  }
+  .tablewd{
+    width: 150px;
+
+  }
+  .font{
+    font-family: 'Nunito', sans-serif;
+    color:rgb(0, 0, 0);
+    border:0px !important;
+    font-weight: bolder;
+  }
+  .dcolor{
+    color: rgb(29, 4, 4);
+  }
+</style>
+<script>
+function change(imgs){
+  
+  document.getElementById("imga").src=imgs.src;
+  ducument.getElementById("img").style.border="1 px solid";
+  
+}
+function original()
+{
+ 
+  document.getElementById("imga").src = "{{lst2.firstimage.url}}";
+  
+}
+
+function rating(id){
+  if(id==1){
+    var ele = document.getElementById("1");
+    ele.classList.add("checked");
+  }
+  else if( id == 2){
+    var ele1 = document.getElementById("1");
+    var ele2 = document.getElementById("2");
+    ele1.classList.add("checked");
+    ele2.classList.add("checked");
+  }
+  else if (id == 3)
+  {
+    var ele1 = document.getElementById("1");
+    var ele2 = document.getElementById("2");
+    var ele3 = document.getElementById("3");
+    ele1.classList.add("checked");
+    ele2.classList.add("checked");
+    ele3.classList.add("checked");
+
+  }
+  else if (id ==4){
+    var ele1 = document.getElementById("1");
+    var ele2 = document.getElementById("2");
+    var ele3 = document.getElementById("3");
+    var ele4 = document.getElementById("4");
+    ele1.classList.add("checked");
+    ele2.classList.add("checked");
+    ele3.classList.add("checked");
+    ele4.classList.add("checked");
+  }
+  else if(id == 5){
+    var ele1 = document.getElementById("1");
+    var ele2 = document.getElementById("2");
+    var ele3 = document.getElementById("3");
+    var ele4 = document.getElementById("4");
+    var ele5 = document.getElementById("5");
+    ele1.classList.add("checked");
+    ele2.classList.add("checked");
+    ele3.classList.add("checked");
+    ele4.classList.add("checked");
+    ele5.classList.add("checked");
+  }
+}
+</script>
+{% if lst2 %}
+<div class="row" style="margin-top:70px; background-color: white;">
+  <div class="col-lg-5 col-sm-6" style="height:auto;border:1px silver;border-radius:4px;margin:0px 0px 0px 0px;">
+    <div  align="center">
+  <div  style="height:400px; width:400px;margin-top:50px;">
+    
+      <img src="{{lst2.firstimage.url}}" style="height:100%;width:100%;;object-fit: contain" id="imga" class="">
+
+      </div>
+      </div>
+          <div class="row" style="margin:20px 0px 0px 20px;">
+            <div class="col-lg-2"
+              style="height: 70px;width: 70px;margin:20px 0px 0px 10px;border:1px solid; border-color:silver;border-radius: 4px; ">
+        <img src="{{lst2.firstimage.url}}" class=" " onclick="change(this);" 
+          style="width:100%;height: 65px;object-fit: contain;" id="img">
+            </div>
+          {% for k in phonesimage %}
+          <div class="col-lg-2 col-xs-2 col-sm-2" style="height: 70px;width: 70px;margin:20px 0px 0px 10px;border:1px solid; border-color:silver;border-radius: 4px; ">
+            <div align="center">
+             <img src="{{k.image.url}}" class=" "  onclick="change(this);"  style="width:100%;height: 65px;object-fit: contain;"id="img">
+            </div>
+          </div>
+          {% endfor %}
+        
+        </div>
+        
+
+     
+        
+    <!----<img src="{{lst2.image.url}}" style="height:70px; width:70px;margin:20px 0px 0px 10px;" onclick="change();">
+    <img src="" style="height:70px; width:70px;margin:20px 0px 0px 10px;" onclick="change();">
+    <img src="" style="height:70px; width:70px;margin:20px 0px 0px 10px;" onclick="change();">
+    <img src="" style="height:70px; width:70px;margin:20px 0px 0px 10px;" onclick="change();">
+    <img src="" style="height:70px; width:70px;margin:20px 0px 0px 10px;" onclick="change();">-->
+    
+      </div>
+      <div class="col-lg-7 col-sm-6" style="border:1px silver;border-radius: 4px;margin:0px 0px 0px 0px;">
+      <div align="">
+        <h4 style="color:black">{{lst2.BrandName}}  {{lst2.modelname}}({{lst2.color}},{{lst2.internalstorage}}) ({{lst2.ram}}) <span style="color:silver;">#JUST BUY IT</span></h4>
+         <h2 style="color:green;">&#8377<span>{{lst2.Price}}</span></h2>
+         <!-- {% ls = lst2.description.split('\n') % -->
+         <h3>Highlights:</h3>
+         <div style="margin-left:50px;">
+           <h5 class="font"><span class="glyphicon glyphicon-star" style="color:royalblue"></span>  {{lst2.ram}} RAM | {{lst2.internalstorage}} ROM | Epandable upto {{lst2.expandablememory}}</h5>
+           <h5 class="font"><span class="glyphicon glyphicon-star" style="color:royalblue"></span> {{lst2.displaysize}} | {{lst2.displaytype}} |  {{lst2.resolutiontype}} Display</h5>
+           <h5 class="font"><span class="glyphicon glyphicon-star" style="color:royalblue"></span> {{lst2.resolution}} {{lst2.resolutiontype}}</h5>
+           <h5 class="font"><span class="glyphicon glyphicon-star" style="color:royalblue"></span> {{lst2.processortype}} | {{lst2.processorcore}} Processor</h5>
+           <h5 class="font"><span class="glyphicon glyphicon-star" style="color:royalblue"></span> {{lst2.primarycemera}} | {{lst2.secondarycamera}} Front Camera</h5>
+           <h5 class="font"><span class="glyphicon glyphicon-star" style="color:royalblue"></span> {{lst2.battrycapacity}}  {{lst2.battrytype}} Battry</h5>
+           <h5 class="font"><span class="glyphicon glyphicon-star" style="color:royalblue"></span> {{lst2.warranty}}</h5>
+           </div>
+        <br>
+        <a href="cart/{{lst2.modelno}}" class="btn btn-warning btn-lg " style="border-radius:2px !important;"><span class="glyphicon glyphicon-shopping-cart"></span>ADD TO CART</a>
+        <a href="" class="btn btn-warning btn-lg" style="margin-left:20px;border-radius:2px !important;"><span class="glyphicon glyphicon-shopping-cart"></span> BUY NOW</a>
+        <!-- <h2 style="font-family:Georgia, serif">Product description</h2>
+        <div class="col-lg-10" style="height:600px;">
+          <img src="{% static "performence.png"%}">
+        </div> --><br>
+        <h2>Rating and review</h2>
+        <form action="post">
+          {% csrf_token %}
+          <input type="hidden" name="rate" />
+          <span class="fa fa-star" id="1" onclick="rating(this.id);"></span>
+          <span class="fa fa-star" id="2" onclick="rating(this.id);"></span>
+          <span class="fa fa-star" id="3" onclick="rating(this.id);"></span>
+          <span class="fa fa-star" id="4" onclick="rating(this.id);"></span>
+          <span class="fa fa-star" id="5" onclick="rating(this.id);"></span>
+        </form>
+                </div>
+          </div>
+          </div>
+          <div align="center"style="background-color:white;" ><h2 class="font"><b>Specification</b></h2><br></div>
+          
+          <div class="row" style="padding:50px;background-color:white;">
+          <div class="col-lg-6">
+            
+            
+            <h3 style="color:rgb(79, 79, 211);"><b>General</b></h3>
+            <div style="border: 0px solid; border-color: silver;">
+            <table class="table">
+              <tbody>
+                <tr>
+                  <td class="tablewd font">In the Box </td>
+                  <td class="font dcolor">{{lst2.inthebox}}</td>
+                </tr>
+                <tr>
+                  <td class="tablewd font">Model No</td>
+                  <td class="font dcolor">{{lst2.modelno}}</td>
+                </tr>
+                <tr>
+                  <td class="tablewd font">Model name</td>
+                  <td class="font dcolor">{{lst2.modelname}}</td>
+                </tr>
+                <tr>
+                  <td class="tablewd font">Color</td>
+                  <td class="font dcolor">{{lst2.color}}</td>
+                </tr>
+                <tr>
+                  <td class="tablewd font">Browse Type</td>
+                  <td class="font dcolor">{{lst2.borwsertype}}</td>
+                </tr>
+                <tr>
+                  <td class="tablewd font">SIM Type</td>
+                  <td class="font dcolor">{{lst2.simtype}}</td>
+                </tr>
+                <tr>
+                  <td class="tablewd font">Hybrid Sim Slot</td>
+                  <td class="font dcolor">{{lst2.hybridslot}}</td>
+                </tr>
+                <tr>
+                  <td class="tablewd font">Touchscreen</td>
+                  <td class="font dcolor">{{lst2.touchscreen}}</td>
+                </tr>
+                <tr>
+                  <td class="tablewd font">OTG Compatible</td>
+                  <td class="font dcolor">{{lst2.otgcompatiable}}</td>
+                </tr>
+              </tbody>
+          
+            </table>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <h3 style="color:rgb(79, 79, 211);"><b>Display Features</b></h3>
+            <div style="border: 0px solid; border-color: silver;">
+            <table class="table">
+              <tbody>
+                <tr>
+                  <td class="tablewd font">Display Size</td>
+                  <td class="font dcolor">{{lst2.displaysize}}</td>
+                </tr>
+                <tr>
+                  <td class="tablewd font">Resolution</td>
+                  <td class="font dcolor">{{lst2.resolution}}</td>
+                </tr>
+                <tr>
+                  <td class="tablewd font">Resolution Type</td>
+                  <td class="font dcolor">{{lst2.resolutiontype}}</td>
+                </tr>
+                <tr>
+                  <td class="tablewd font">GPU</td>
+                  <td class="font dcolor">{{lst2.color}}</td>
+                </tr>
+                <tr>
+                  <td class="tablewd font">Display Type</td>
+                  <td class="font dcolor">{{lst2.displaytype}}</td>
+                </tr>
+                <tr>
+                  <td class="tablewd font">Other Display Features</td>
+                  <td class="font dcolor">{{lst2.displaytype}}</td>
+                </tr>
+                <tr>
+                  <td class="tablewd font">Internal Storage</td>
+                  <td class="font dcolor">{{lst2.internalstorage}}</td>
+                </tr>
+                <tr>
+                  <td class="tablewd font">RAM</td>
+                  <td class="font dcolor">{{lst2.ram}}</td>
+                </tr>
+                <tr>
+                  <td class="tablewd font">Expandable Storage</td>
+                  <td class="font dcolor">{{lst2.expandablememory}}</td>
+                </tr>
+              </tbody>
+            
+            </table>
+            </div>
+          </div>
+          <div class="col-lg-6"> 
+            <h3 style="color:rgb(79, 79, 211);"><b>Os & Processor Features</b></h3>
+            <div style="border: 0px solid; border-color: silver;">
+            <table class="table">
+              <tbody>
+                <tr>
+                  <td class="tablewd font">Operating System</td>
+                  <td class="font dcolor">{{lst2.operatingsystem}}</td>
+                </tr>
+                <tr>
+                  <td class="tablewd font">Processor Type</td>
+                  <td class="font dcolor">{{lst2.processortype}}</td>
+                </tr>
+                <tr>
+                  <td class="tablewd font">Processor Core</td>
+                  <td class="font dcolor">{{lst2.processorcore}}</td>
+                </tr>
+                <tr>
+                  <td class="tablewd font">Primary Clock Speed</td>
+                  <td class="font dcolor">{{lst2.primaryclockspeed}}</td>
+                </tr>
+                <tr>
+                  <td class="tablewd font">Secondary Clock Speed</td>
+                  <td class="font dcolor">{{lst2.borwsertype}}</td>
+                </tr>
+                <tr>
+                  <td class="tablewd font">Operating Frequency</td>
+                  <td class="font dcolor">2.2 GHZ</td>
+                </tr>
+                <tr>
+                  <td class="tablewd font">Hybrid Sim Slot</td>
+                  <td class="font dcolor">{{lst2.hybridslot}}</td>
+                </tr>
+                <tr>
+                  <td class="tablewd font">Memory Card Slot Type</td>
+                  <td class="font dcolor">{{lst2.memorycardslottype}}</td>
+                </tr>
+                <tr>
+                  <td class="tablewd font">Supported Memory Card Type</td>
+                  <td class="font dcolor">{{lst2.supportedmemorycardtype}}</td>
+                </tr>
+              </tbody>
+          
+            </table>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <h3 style="color:rgb(79, 79, 211);"><b>Camera Features</b></h3>
+            <div style="border: 0px solid; border-color: silver;">
+              <table class="table">
+                <tbody>
+                  <tr>
+                    <td class="tablewd font">Primary Camera Available</td>
+                    <td class="font dcolor">{{lst2.primarycameraavailability}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tablewd font">Primary Camera</td>
+                   
+                    <td class="font dcolor">{{lst2.primarycemera}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tablewd font">Primary Camera Features</td>
+                    <td class="font dcolor">{{lst2.primarycamerafeature}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tablewd font">Color</td>
+                    <td class="font dcolor">{{lst2.color}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tablewd font">Browse Type</td>
+                    <td class="font dcolor">{{lst2.borwsertype}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tablewd font">Secondary Camera Available</td>
+                    <td class="font dcolor">{{lst2.sensors}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tablewd font">Secondary Camera</td>
+                    <td class="font dcolor">{{lst2.secondarycamera}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tablewd font">Secondary Camera Features</td>
+                    <td class="font dcolor">{{lst2.secondarycamerafeature}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tablewd font">Flash</td>
+                    <td class="font dcolor">{{lst2.flash}}</td>
+                  </tr>
+                </tbody>
+          
+              </table>
+            </div>
+          </div>
+</div>
+{% else %}
+{% for i in lsttv %}
+<div class="row" style="margin-top:70px; background-color: white;">
+  <div class="col-lg-5 col-sm-6" style="height:auto;border:1px silver;border-radius:4px;margin:0px 0px 0px 0px;">
+    <div align="center">
+      <div style="height:400px; width:400px;margin-top:50px;">
+
+        <img src="{{i.firstimage.url}}" style="height:100%;width:100%;;object-fit: contain" id="imga" class="">
+
+      </div>
+    </div>
+    <div class="row" style="margin:20px 0px 0px 20px;">
+      <div class="col-lg-2"
+        style="height: 70px;width: 70px;margin:20px 0px 0px 10px;border:1px solid; border-color:silver;border-radius: 4px; ">
+        <img src="{{i.firstimage.url}}" class=" " onclick="change(this);"
+          style="width:100%;height: 65px;object-fit: contain;" id="img">
+      </div>
+      {% for k in tvimage %}
+      <div class="col-lg-2 col-xs-2 col-sm-2"
+        style="height: 70px;width: 70px;margin:20px 0px 0px 10px;border:1px solid; border-color:silver;border-radius: 4px; ">
+        <div align="center">
+          <img src="{{k.image.url}}" class=" " onclick="change(this);"
+            style="width:100%;height: 65px;object-fit: contain;" id="img">
+        </div>
+      </div>
+      {% endfor %}
+
+    </div>
+
+
+
+
+    <!----<img src="{{lst2.image.url}}" style="height:70px; width:70px;margin:20px 0px 0px 10px;" onclick="change();">
+    <img src="" style="height:70px; width:70px;margin:20px 0px 0px 10px;" onclick="change();">
+    <img src="" style="height:70px; width:70px;margin:20px 0px 0px 10px;" onclick="change();">
+    <img src="" style="height:70px; width:70px;margin:20px 0px 0px 10px;" onclick="change();">
+    <img src="" style="height:70px; width:70px;margin:20px 0px 0px 10px;" onclick="change();">-->
+
+  </div>
+  <div class="col-lg-7 col-sm-6" style="border:1px silver;border-radius: 4px;margin:0px 0px 0px 0px;">
+    <div align="">
+      <h4 style="color:black">{{i.BrandName}} {{i.Tvname}}({{i.color}},{{i.DisplaySize}})
+        <span style="color:silver;">#JUST BUY IT</span></h4>
+      <h2 style="color:green;">&#8377<span>{{i.Price}}</span></h2>
+      <!-- {% ls = lst2.description.split('\n') % -->
+      <h3>Highlights:</h3>
+      <div style="margin-left:50px;">
+        <h5 class="font"><span class="glyphicon glyphicon-star" style="color:royalblue"></span>  {{i.SpeakerType}} Speaker Output</h5>
+        <h5 class="font"><span class="glyphicon glyphicon-star" style="color:royalblue"></span>  {{i.resolution}} {{i.ScreenType}} - Great picture quality</h5>
+        <h5 class="font"><span class="glyphicon glyphicon-star" style="color:royalblue"></span> {{i.RefreshRatio}} Standard refresh rate for blur-free picture quality</h5>
+        <h5 class="font"><span class="glyphicon glyphicon-star" style="color:royalblue"></span> 3 x HDMI :For set top box, consoles and Blu-ray players</h5>
+        <h5 class="font"><span class="glyphicon glyphicon-star" style="color:royalblue"></span> 2 x USB : Easily connect your digital camera, camcorder or USB device</h5>
+        <h5 class="font"><span class="glyphicon glyphicon-star" style="color:royalblue"></span> Size : {{i.Dimensions}}
+          </h5>
+        <h5 class="font"><span class="glyphicon glyphicon-star" style="color:royalblue"></span> {{i.Warranty}}</h5>
+      </div>
+      <br>
+      <a href="cart/{{i.modelno}}" class="btn btn-warning btn-lg " style="border-radius:2px !important;"><span
+          class="glyphicon glyphicon-shopping-cart"></span>ADD TO CART</a>
+      <a href="" class="btn btn-warning btn-lg" style="margin-left:20px;border-radius:2px !important;"><span
+          class="glyphicon glyphicon-shopping-cart"></span> BUY NOW</a>
+      <!-- <h2 style="font-family:Georgia, serif">Product description</h2>
+        <div class="col-lg-10" style="height:600px;">
+          <img src="{% static "performence.png"%}">
+        </div> --><br>
+      <h2>Rating and review</h2>
+      <form action="post">
+        {% csrf_token %}
+        <input type="hidden" name="rate" />
+        <span class="fa fa-star" id="1" onclick="rating(this.id);"></span>
+        <span class="fa fa-star" id="2" onclick="rating(this.id);"></span>
+        <span class="fa fa-star" id="3" onclick="rating(this.id);"></span>
+        <span class="fa fa-star" id="4" onclick="rating(this.id);"></span>
+        <span class="fa fa-star" id="5" onclick="rating(this.id);"></span>
+      </form>
+    </div>
+  </div>
+</div>
+{% endfor %}
+{% endif %}
+{% endblock %}

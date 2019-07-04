@@ -1,0 +1,1294 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load staticfiles %}
+<head>
+    <title>quickshop</title>
+    <meta charset="utf-8">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+      <link rel="stylesheet" href="{% static "dropdown.css" %}">
+    <!--<link rel="stylesheet" href="static/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/dropdown.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/demo.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    
+    <style>
+    .footer-social li{
+          float: left;
+          padding:0px 24px 0px 24px;
+     }
+     .social-icon {
+    width: 30px;
+    height: 30px;
+    font-size: 15px;
+    background-color: blue;
+    color: #fff;
+    text-align: center;
+    margin-right: 30px;
+    padding-top: 7px;
+    border-radius: 50%;}
+     .linked-in{
+         background-color:#007bb6;
+     }
+     .facebook{
+         background-color:#3b5998;
+     }
+     .twitter{
+         background-color:#1da1f2;
+     }
+     .google{
+         background-color:#f63e28;
+     }
+    .mydiv::after {
+        content: "";
+        height: 70px;
+        display: block;
+    }
+    .container { width: @container-desktop !important; }
+
+    .footer {
+      background-color: rgb(73, 73, 73);
+      width: 100%;
+      height: 350px;
+      position:static;
+    }
+    .zoom:hover {
+  -ms-transform: scale(30); /* IE 9 */
+  -webkit-transform: scale(10); /* Safari 3-8 */
+  transform: scale(1.05);
+}
+.zoom1:hover {
+-ms-transform: scale(5); /* IE 9 */
+-webkit-transform: scale(5); /* Safari 3-8 */
+transform: scale(1.3);
+}
+
+    .dropdown:hover > .dropdown-menu {
+        display: block;
+    }
+
+    body{
+      background-color:rgb(228, 228, 228);
+    }
+        .a {
+            background-image: url({% static "3333.jpg" %});
+            
+            background-size:cover;
+            border: 0px !important;
+            width: 100% !important;
+            z-index: 10000 !important;
+            background-color: transparent !important;
+
+        }
+
+        .registerbackground{
+          width:98%;
+          height: 92vh;
+          /* height: 100%; */
+          background-color:rgba(41, 86, 235, 0.322);
+        }
+
+        .imregister{
+          height:250px !important;
+          width:100%;
+          background:cover !important;
+          border-radius:10px !important;
+        }
+
+        .register1{
+        height:300px !important;
+        width:400px !important;
+        margin-top: 250px !important;
+        border-radius:10px !important;
+        }
+
+        .nav2 {
+            margin-top: 3%;
+            margin-bottom: 0% !important;
+            border: 0px !important;
+            width: 100% !important;
+            background-color: white;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .nav2 {
+                margin-top: 30%;
+                z-index: -1;
+            }
+        }
+
+        .list {
+            margin-left: 40%;
+        }
+
+        ul li a {
+            /* font-size: 16px !important;s */
+            /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+            color: rgb(148, 145, 142);
+            list-style: none;
+        }
+         .login{
+             z-index: 10000 !important;
+         }
+        .c {
+            border: 0px !important;
+        }
+
+        .x {
+
+            margin-left: 40px;
+
+        }
+
+        .im {
+            width: 100%;
+            max-height: 350px !important;
+            height: 260px !important;
+        }
+
+        .f {
+            color: white !important;
+            border: none !important;
+            background: none !important;
+             }
+        .input{
+         border: 0px 1px 0px 0px !important;
+        }
+        .im1{
+            height: 200px !important;
+            width: 100% !important;
+        }
+
+        .affix {
+    top: 0;
+    width: 100%;
+    z-index: 9999 !important;
+  }
+  .affix + .container-fluid {
+    padding-top: 70px;}
+    .bodyCarousel{
+        margin-top: 75px;
+    }
+
+  .loginbackground{
+      background-color: darkorange !important;
+  }
+  .imgsize{
+    height:120px;
+    width:200px;
+
+  }
+  .navbar-login
+{
+    width: 200px;
+    height:240px;
+    padding: 0px;
+    padding-bottom: 0px;
+    background-color:rgb(11, 11, 36) !important ;
+  }
+  .profilebackground{
+    float:left !important;
+  }
+
+    </style>
+</head>
+
+<body style="overflow-x:hidden!important;overflow-y:auto !important;">
+    <nav class="navbar navbar-inverse navbar-fixed-top a">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"></a>
+            </div>
+
+            <ul class="nav navbar-nav navbar-right">
+                <form class="navbar-form navbar-right c" action="search"  method="POST">
+                  {% csrf_token %}
+                    <div class="form-group c">
+                        <div class="inner-addon left-addon has-feedback has-feedback-left ">
+                            <input type="text" class="form-control" placeholder="Search" name="q">
+                          <i class="form-control-feedback glyphicon glyphicon-search"></i>
+                        </div>
+                    </div>
+                </form>
+
+            </ul>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right ">
+
+                    <li class="dropdown">
+                      {% if user.is_authenticated %}
+                        <a class="f dropdown-toggle" href="#" data-toggle="dropdown">
+                            <span class="glyphicon glyphicon-user"></span> user</a>
+                            <ul class="dropdown-menu profilebackground">
+                        <li>
+                            <div class="navbar-login">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <p class="text-center">
+                                            <img src="static\newyork.JPG" alt="" class="imgsize">
+                                        </p>
+                                    </div>
+                                  </div>
+                                  <div class="row">
+                                    <div class="col-lg-12 profiledata ">
+                                        <p class="" align="center" style="color:white;"><strong>{{user.username}}</strong></p>
+                                        <p class="" align="center" style="color:white;">{{user.email}}</p>
+                                        <p class="" align="center">
+                                            <a href="edit_profile" class="btn btn-primary btn-block btn-sm">Edit Profile</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                    </ul>
+                    </li>
+                     <li>
+                        <a href="logout"  class="f"><span class="glyphicon glyphicon-off"></span> Logout</a>
+
+                    </li>
+                    <li>
+                        <a class="f" href="cart">
+                            <span class="glyphicon glyphicon-shopping-cart"></span> cart</a>
+                    </li>
+                    {% else %}
+                    <li>
+                        <a class="f" href="returnhome">
+                            <span class="glyphicon glyphicon-home"></span> Home</a>
+                    </li>
+                    <li>
+                        <a class="f" href="Signup">
+                            <span class="glyphicon glyphicon-user"></span> Signup</a>
+                    </li>
+
+                    <li>
+                        <a class="f" href="login" data-toggle="modal" data-target="#loginModal" id="loginid" style="font-family::'Nunito', sans-serif;">
+                            <span class="glyphicon glyphicon-log-in"></span> Login</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <nav class="navbar nav2 nav-2" data-spy="affix">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar1">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse  data1" id="myNavbar1">
+                <ul class="nav navbar-nav navbar-left dropdown-content">
+                    <li class="dropdown dropdown-large nav nav-item">
+                        <a href="#" class="dropdown-toggle x" data-toggle="dropdown" data-trigger="hover">Men
+                            <b class="caret"></b>
+                        </a>
+
+                        <ul class="dropdown-menu dropdown-menu-large row">
+                            <li class="col-sm-3">
+                                <ul>
+                                    <li class="dropdown-header">Top wear</li>
+                                    <li>
+                                        <a href="#">T-shirt</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Shirts</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Jackets</a>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li class="dropdown-header">Bottom wear</li>
+                                    <li>
+                                        <a href="#">Jeans</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Trousers</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Track paints</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Shorts</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="col-sm-3">
+                                <ul>
+                                    <li class="dropdown-header">Sports wear</li>
+                                    <li>
+                                        <a href="#">Track Paints</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Track suits</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sports tshirts</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sports</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sports shoes</a>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li class="dropdown-header">Inner wear & seepwear</li>
+                                    <li>
+                                        <a href="#">Briefs & trunks</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Thermals</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="col-sm-3">
+                                <ul>
+                                    <li class="dropdown-header">Watches</li>
+                                    <li>
+                                        <a href="#">Fastrack</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Titan</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Casio</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sonata</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Tommy HIlfiger</a>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li class="dropdown-header">Men's Grooming</li>
+                                    <li>
+                                        <a href="#">Trimmers</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Perfums</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Shavind & after shave</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="col-sm-3">
+                                <ul>
+                                    <li class="dropdown-header">Footwear</li>
+                                    <li>
+                                        <a href="#">Sports Shoes</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Casual Shoes</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Formal Shoes</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sandals & Floaters</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Running Shoes</a>
+                                    </li>
+                                    <li>
+                                        <a href="#"> Boots</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sneakers</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Loafers</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Flip- Flops</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    </li>
+                    <li class="dropdown dropdown-large nav nav-item">
+                        <a href="#" class="dropdown-toggle x" data-toggle="dropdown">Women
+                            <b class="caret"></b>
+                        </a>
+
+                        <ul class="dropdown-menu dropdown-menu-large row">
+                            <li class="col-sm-3">
+                                <ul>
+                                    <li class="dropdown-header">Top wear</li>
+                                    <li>
+                                        <a href="#">T-shirt</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Shirts</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Jackets</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Jeans tops</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">outer</a>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li class="dropdown-header">Bottom wear</li>
+                                    <li>
+                                        <a href="#">Jeans</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Trousers</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Track paints</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Shorts</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="col-sm-3">
+                                <ul>
+                                    <li class="dropdown-header">Sports wear</li>
+                                    <li>
+                                        <a href="#">Track Paints</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Track suits</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sports tshirts</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sports</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sports shoes</a>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li class="dropdown-header">Inner wear & seepwear</li>
+                                    <li>
+                                        <a href="#">Briefs & trunks</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Thermals</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="col-sm-3">
+                                <ul>
+                                    <li class="dropdown-header">Watches</li>
+                                    <li>
+                                        <a href="#">Fastrack</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Titan</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Casio</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sonata</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Tommy HIlfiger</a>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li class="dropdown-header">Women's Grooming</li>
+                                    <li>
+                                        <a href="#">Trimmers</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Perfums</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Shavind & after shave</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="col-sm-3">
+                                <ul>
+                                    <li class="dropdown-header">Footwear</li>
+                                    <li>
+                                        <a href="#">Sports Shoes</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Casual Shoes</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Formal Shoes</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sandals & Floaters</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Running Shoes</a>
+                                    </li>
+                                    <li>
+                                        <a href="#"> Boots</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sneakers</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Loafers</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Flip- Flops</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    </li>
+                    <li class="dropdown dropdown-large">
+                        <a href="#" class="dropdown-toggle x" data-toggle="dropdown">Electronics
+                            <b class="caret"></b>
+                        </a>
+
+                        <ul class="dropdown-menu dropdown-menu-large row">
+                            <li class="col-sm-3">
+                                <ul>
+                                    <li class="dropdown-header">Mobiles</li>
+                                    <li>
+                                        <a href="phones-nokia">Nokia</a>
+                                    </li>
+                                    <li>
+                                        <a href="phones-mi">Mi</a>
+                                    </li>
+                                    <li>
+                                        <a href="phones-samsung">Samsung</a>
+                                    </li>
+                                   <!-- <li class="divider"></li>
+                                   <li class="dropdown-header">Bottom wear</li>-->
+                                    <li>
+                                        <a href="#">Apple</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Moto</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Realme</a>
+                                    </li>
+                                    <li><a href="#">Oppo</a> </li>
+                                    <li><a href="#">Vivo</a> </li>
+                                    <li><a href="#">Google Pixel</a> </li>
+                                    <li><a href="#">Lenovo</a> </li>
+                                    <li><a href="#">Honor</a> </li>
+                                    <li><a href="#">Asus</a> </li>
+                                    <li><a href="#">Panasonic</a> </li>
+                                    <li><a href="#">poco</a> </li>
+                                </ul>
+                            </li>
+                            <li class="col-sm-3">
+                                <ul>
+                                    <li class="dropdown-header">Mobile Accessories</li>
+                                    <li>
+                                        <a href="#">Mobile cases</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">HeadPhones</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Power Banks</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Screengaurds</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">memory cards</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Smart Headphone</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Mobiles cables</a>
+                                    </li>
+                                    <li><a href="#">Mobiles chargers</a> </li>
+                                    <li><a href="#">MObile holders</a> </li>
+                                    <li class="divider"></li>
+                                    <li class="dropdown-header">HealthCare Applications</li>
+                                    <li><a href="#">Bp Moniters</a> </li>
+
+                                </ul>
+                            </li>
+                            <li class="col-sm-3">
+                                <ul>
+                                    <li class="dropdown-header">Laptops</li>
+                                    <li>
+                                        <a href="#">Dell</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Hp</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Asus</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Apple</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Lenovo</a>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li class="dropdown-header">Tvs</li>
+                                    <li>
+                                        <a href="#">Sony</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Samsung</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Panasonics</a>
+                                    </li>
+                                    <li>
+                                            <a href="#"></a>
+                                        </li>
+
+                                </ul>
+                            </li>
+                            <li class="col-sm-3">
+                                <ul>
+                                    <li class="dropdown-header">HomeEntertainment</li>
+                                    <li>
+                                        <a href="#">Home Audio</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Dth Box</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">BlueTooth Speaker</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Home Theaters</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Running Shoes</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    </li>
+                    <li class="dropdown dropdown-large">
+                        <a href="#" class="dropdown-toggle x" data-toggle="dropdown">Baby &kids
+                            <b class="caret"></b>
+                        </a>
+
+                        <ul class="dropdown-menu dropdown-menu-large row">
+                            <li class="col-sm-3">
+                                <ul>
+                                    <li class="dropdown-header">Top wear</li>
+                                    <li>
+                                        <a href="#">T-shirt</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Shirts</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Jackets</a>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li class="dropdown-header">Bottom wear</li>
+                                    <li>
+                                        <a href="#">Jeans</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Trousers</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Track paints</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Shorts</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="col-sm-3">
+                                <ul>
+                                    <li class="dropdown-header">Sports wear</li>
+                                    <li>
+                                        <a href="#">Track Paints</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Track suits</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sports tshirts</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sports</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sports shoes</a>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li class="dropdown-header">Inner wear & seepwear</li>
+                                    <li>
+                                        <a href="#">Briefs & trunks</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Thermals</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="col-sm-3">
+                                <ul>
+                                    <li class="dropdown-header">Watches</li>
+                                    <li>
+                                        <a href="#">Fastrack</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Titan</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Casio</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sonata</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Tommy HIlfiger</a>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li class="dropdown-header">Men's Grooming</li>
+                                    <li>
+                                        <a href="#">Trimmers</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Perfums</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Shavind & after shave</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="col-sm-3">
+                                <ul>
+                                    <li class="dropdown-header">Footwear</li>
+                                    <li>
+                                        <a href="#">Sports Shoes</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Casual Shoes</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Formal Shoes</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sandals & Floaters</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Running Shoes</a>
+                                    </li>
+                                    <li>
+                                        <a href="#"> Boots</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sneakers</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Loafers</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Flip- Flops</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    </li>
+                    <li class="dropdown dropdown-large">
+                        <a href="#" class="dropdown-toggle x" data-toggle="dropdown">Home & furniters
+                            <b class="caret"></b>
+                        </a>
+
+                        <ul class="dropdown-menu dropdown-menu-large row">
+                            <li class="col-sm-3">
+                                <ul>
+                                    <li class="dropdown-header">Kitchen & Dining</li>
+                                    <li>
+                                        <a href="#">Pots & pans</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Pressure Cookers</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Gas Stoves</a>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li class="dropdown-header">Kitchen Storage</li>
+                                    <li>
+                                        <a href="#">Waters Bottles</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Lunche Boxes</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Flasks</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Kitchen Containers</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="col-sm-3">
+                                <ul>
+                                    <li class="dropdown-header">Furniters</li>
+                                    <li>
+                                        <a href="#">Beds</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sofas</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Dining tables</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Tables</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Beans bags</a>
+                                    </li>
+                                   <!-- <li class="divider"></li>
+                                    <li class="dropdown-header"></li>-->
+                                    <li>
+                                        <a href="#">Tv Units</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Office chains</a>
+                                    </li>
+
+                                    <li><a href="#">Chairs</a></li>
+                                    <li><a href="#">Drawers</a></li>
+                                    <li><a href="#">Sofa Beds</a></li>
+                                </ul>
+                            </li>
+                            <li class="col-sm-3">
+                                <ul>
+                                    <li class="dropdown-header">Home Decor</li>
+                                    <li>
+                                        <a href="#">Paintings</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">clocks</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Wall shelves</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Wall Decals</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Showpieces</a>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li class="dropdown-header">SmartHome</li>
+                                    <li>
+                                        <a href="#">Smart Security</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Smart door</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Smart locker</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="col-sm-3">
+                                <ul>
+                                    <li class="dropdown-header">Furnishings</li>
+                                    <li>
+                                        <a href="#">Bedsheets</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Curtains</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Towels</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Mat & carpets</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    </li>
+                    <li class="dropdown dropdown-large">
+                        <a href="#" class="dropdown-toggle x" data-toggle="dropdown">TV & Appliances
+                            <b class="caret"></b>
+                        </a>
+
+                        <ul class="dropdown-menu dropdown-menu-large row">
+                            <li class="col-sm-3">
+                                <ul>
+                                    <li class="dropdown-header">Televisons</li>
+                                    <li>
+                                        <a href="#">Sony</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Samsung</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">LG</a>
+                                    </li><li>
+                                        <a href="#">Mi</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Vu</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Panasonics</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Onida</a>
+                                        <li class="divider"></li>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="col-sm-3">
+                                <ul>
+                                    <li class="dropdown-header">Washing Machine</li>
+                                    <li>
+                                        <a href="#">Fully Automatic Front Load</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Semi Automatic Top Load</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Fully Automatic Top Load</a>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li class="dropdown-header">Air Conditions</li>
+                                    <li>
+                                        <a href="#">Inverter Ac</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">TSplit ACs</a>
+                                    </li> <li>
+                                            <a href="#">Window ACs</a>
+                                        </li>
+                                </ul>
+                            </li>
+                            <li class="col-sm-3">
+                                <ul>
+                                    <li class="dropdown-header">Watches</li>
+                                    <li>
+                                        <a href="#">Fastrack</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Titan</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Casio</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sonata</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Tommy HIlfiger</a>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li class="dropdown-header">Men's Grooming</li>
+                                    <li>
+                                        <a href="#">Trimmers</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Perfums</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Shavind & after shave</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="col-sm-3">
+                                <ul>
+                                    <li class="dropdown-header">Footwear</li>
+                                    <li>
+                                        <a href="#">Sports Shoes</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Casual Shoes</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Formal Shoes</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sandals & Floaters</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Running Shoes</a>
+                                    </li>
+                                    <li>
+                                        <a href="#"> Boots</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sneakers</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Loafers</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Flip- Flops</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    </li>
+                    <!-- <li class="nav-item dropdown">
+                                    <button class="dropdown-toggle btn btn-default x" data-toggle="dropdown" type="button">Women <span class="caret"></span></button>
+                                         <ul class="dropdown-menu btn-denger">
+                                            <li><a  href="#">action1</a></li>
+                                            <li><a  href="#">action1</a></li>
+                                            <li><a  href="#">action2</a></li>
+                                            <li><a  href="#">action1</a></li>
+                                         </ul>
+                                         <li class="nav-item dropdown">
+                                    <button class="dropdown-toggle btn btn-default x" data-toggle="dropdown" type="button">Electronics <span class="caret"></span></button>
+                                        <ul class="dropdown-menu btn-denger">
+                                            <li><a  href="#">action1</a></li>
+                                            <li><a  href="#">action1</a></li>
+                                            <li><a  href="#">action2</a></li>
+                                            <li><a  href="#">action1</a></li>
+                                         </ul>
+                                         <li class="nav-item dropdown">
+                                   <button class="dropdown-toggle btn btn-default x" data-toggle="dropdown" type="button">TV &Applications <span class="caret"></span></button>
+                                       <ul class="dropdown-menu btn-denger">
+                                            <li><a  href="#">action1</a></li>
+                                            <li><a  href="#">action1</a></li>
+                                            <li><a  href="#">action2</a></li>
+                                            <li><a  href="#">action1</a></li>
+                                        </ul>
+                                    <li class="nav-item dropdown">
+                                   <button class="dropdown-toggle btn btn-default x" data-toggle="dropdown" type="button">Home & Furnitures <span class="caret"></span></button>
+                                         <ul class="dropdown-menu btn-denger">
+                                            <li><a  href="#">action1</a></li>
+                                           <li><a  href="#">action1</a></li>
+                                           <li><a  href="#">action2</a></li>
+                                            <li><a  href="#">action1</a></li>
+                                             </ul>
+                                         <li class="nav-item dropdown">
+                                      <button class="dropdown-toggle btn btn-default x" data-toggle="dropdown" type="button">Boys & kids <span class="caret"></span></button>
+                                       <ul class="dropdown-menu btn-denger">
+                                         <li><a  href="#">action1</a></li>
+                                         <li><a  href="#">action1</a></li>
+                                         <li><a  href="#">action2</a></li>
+                                         <li><a  href="#">action1</a></li>
+                                        </ul>
+                                     </li> -->
+                </ul>
+            </div>
+        </div>
+
+    </nav>
+
+    <div class="container">
+        <div class="row ">
+                <div class="col-md-4 login ">
+                <div class="modal fade" id="loginModal" tabindex="-1">
+                    <div class="modal-dialog ">
+                        <div class="modal-content bg-login loginbackground">
+                            <div class="modal-header">
+                                <button class="close" data-dismiss="modal">&times;</button>
+
+                                <h4 style="float:right; margin-right:100px;">Deals of the day<h4>
+                                    <h4 class="modal-title" style="margin-left:29px;">Login</h4>
+                                <div class="modal-body">
+                                    <div class="col-lg-6">
+                                    <form method="POST" action='login'>
+                                      {% csrf_token %}
+                                      <div class="form-group">
+                                          <!-- <label for="email">Email</label>-->
+                                           <input type="text" placeholder="Email" class="form-control" id="email" name="email"/>
+
+                                      </div>
+                                      <div class="form-group">
+                                         <!--<label for="password">Password</label>-->
+                                         <input type="password" placeholder="password" class="form-control" id="password" name="password"/>
+
+                                     </div>
+                                        <div class=""><br>
+                                           <button class="btn btn-primary btn-block" style="float:left;margin-right: 20px !important;">Login</button>
+                                           <!--<a href="signup"><button class="btn btn-primary">Signup</button></a>--><br><br>
+                                           {% if messages %}
+                                         {% for message in messages %}
+                                         <div class="alert alert-{{ message.tags}}">
+                                          {{ message }}
+                                         </div>
+                                         {% endfor %}
+                                           {% endif %}
+
+
+                                        </div>
+
+
+                                    </form>
+                                    <br>
+                                    <a href="account/password_reset" style="color:black;">Forget possword !</a>
+                                    </div>
+                                    <div class="col-lg-6 login">
+                                        <div id="myCarousel" class="carousel slide bd" data-interval="2000" data-ride="carousel" style="width:100% !important;">
+                                            <ol class="carousel-indicators">
+                                                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                                <li data-target="#myCarousel" data-slide-to="1"></li>
+                                                <li data-target="#myCarousel" data-slide-to="2"></li>
+                                                <li data-target="#myCarousel" data-slide-to="3"></li>
+                                            </ol>
+                                            {% load static %}
+                                            <div class="carousel-inner bd">
+                                                <div class="item active">
+                                                    <img src="{% static "iphone8.jpg" %}" class="img-responsive im1">
+                                                </div>
+                                                <div class="item">
+                                                    <img src="{% static "honor.png" %}" class="img-responsive im1">
+                                                </div>
+                                                <div class="item">
+                                                    <img src="{% static "mi.jpg" %}" class="img-responsive im1">
+                                                </div>
+                                                <div class="item">
+                                                    <img src="{% static "google.jpg" %}" class="img-responsive im1">
+                                                </div>
+                                                <div class="item">
+                                                    <img src="{% static "m20.jpg" %}" class="img-responsive im1">
+                                                </div>
+                                            </div>
+                                            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                                                <span class=""></span>
+                                                <span class="sr-only">Previous</span>
+                                            </a>
+                                            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                                                <span class=""></span>
+                                                <span class="sr-only">Next</span>
+                                            </a>
+                                        </div>
+                                        </div>
+                                        </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <script>
+           
+  $("#loginModal").modal({ "backdrop": "static" });
+        </script>
+        $('#modalForm').on('submit', function() {
+  $(#modal).on('hide.bs.modal', function ( e ) {
+    e.preventDefault();
+  }) 
+});
+    {% block content %}
+
+    {% endblock %}
+    <div class="footer">
+
+                <!--<div class="col-lg-4">
+                  <a href="aboutus" class="btn btn-black btn-lg" style="color:white;">Aboutus</a><br/>
+                  <a href="aboutus" class="btn btn-black btn-lg" style="color:white;">Contactus</a>
+                </div>-->
+                <div class="row" style="padding:40px 40px 0px 40px;;">
+                    <div class="col-lg-3">
+                    <div class="m-l-10" align="" style="margin-left:20px;">
+                      <h4 style="color:rgba(186, 231, 231, 0.932);font-family:'Nunito', sans-serif;"><b>About us</b></h4>
+                      <p style="font-family:'Nunito', sans-serif;;color:silver;font-size:13px;width:200px;" class="lead">Find & Buy Everything You Need! Great Deals, Easy Returns, Hassle Free Shopping. EMI Option Available.Enjoy Delightful Prices. Free & Easy Returns.Types: Smartphones, Electronics, Home Appliances, Apparel, Books</p>
+                      <p ><i class="glyphicon glyphicon-send" style="color:rgb(49, 230, 49)"></i><span style="font-family:'Nunito', sans-serif; color:silver;"> 1245/2334 Raebareli<span></p>
+                      <p ><i class="glyphicon glyphicon-earphone"  style="color:rgb(49, 230, 49)"></i><span style="font-family:'Nunito', sans-serif; color:silver;"> +91-7905914451/+91-9453131839<span></p>
+                      <p ><i class="glyphicon glyphicon-envelope"  style="color:rgb(49, 230, 49)"></i><span style="font-family:'Nunito', sans-serif; color:silver"> chauhananil110@gmail.com <span></p>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                   <div class="row">
+                    <div class="col-lg-6">
+                      <div class="" style="margin-left:20px;">
+                        <h4 style="color:rgba(186, 231, 231, 0.932);font-family:'Nunito', sans-serif;"><b> Help</b></h4>
+                        <a href="" style="color:silver;font-family:'Nunito', sans-serif;">Payment</a><br>
+                        <a href="" style="color:silver;font-family:'Nunito', sans-serif;">Shipping</a><br>
+                        <a href="" style="color:silver;font-family:'Nunito', sans-serif;">cancelllation & Returns</a><br>
+                        <a href="" style="color:silver;font-family:'Nunito', sans-serif;">FAQ</a><br>
+                        <a href="" style="color:silver;font-family:'Nunito', sans-serif;">Report</a>
+
+                      </div>
+                    </div>
+                      <div class="col-lg-6">
+                        <div class="" style="margin-left:px;">
+                          <h4 style="color:rgba(186, 231, 231, 0.932);font-family:'Nunito', sans-serif;"><b> Policy</b></h4>
+                          <a href="" style="color:silver;font-family:'Nunito', sans-serif;">Return Plicy</a><br>
+                          <a href="" style="color:silver;font-family:'Nunito', sans-serif;">Terms of use</a><br>
+                          <a href="" style="color:silver;font-family:'Nunito', sans-serif;">Security</a><br>
+                          <a href="" style="color:silver;font-family:'Nunito', sans-serif;">Privacy</a><br>
+                          <a href="" style="color:silver;font-family:'Nunito', sans-serif;">Sitemap</a>
+                          <a href="" style="color:silver;font-family:'Nunito', sans-serif;">Sitemap</a>
+
+                        </div>
+                    </div>
+                  </div>
+                  <div class="row" align="center">
+        <div class="col-lg-12" style="margin-top:20px;">
+          <h4 style="color:rgba(186, 231, 231, 0.932);font-family:'Nunito', sans-serif; margin-left:20px"><b> Social Media</b></h4>
+
+         <ul class="footer-social" style="list-style:none;" >
+          <a href=""> <li><i class="fa fa-linkedin social-icon linked-in" aria-hidden="true"></i></li></a>
+           <a href=""><li><i class="fa fa-facebook social-icon facebook" aria-hidden="true"></i></li></a>
+           <a href=""><li><i class="fa fa-twitter social-icon twitter" aria-hidden="true"></i></li></a>
+           <a href=""><li><i class="fa fa-google-plus social-icon google" aria-hidden="true"></i></li></a>
+           <a href=""><li><i class="fa fa-youtube-play social-icon google" aria-hidden="true"></i></li></a>
+         </ul>
+                    </div>
+                  </div>
+                  <hr>
+                    <h4 style="color:silver;font-family:'Nunito', sans-serif; margin-left:20px" align="center"> Copyright @2019 | www.quickshop.com</h4>
+                      </div>
+                    <div class="col-lg-3">
+                      <h4 style="color:rgba(186, 231, 231, 0.932);font-family:'Nunito', sans-serif;"><b> Quick Contact</b></h4>
+                      <form class="" action="" method="post">
+                        <div class="form-group">
+                             <input type="text" placeholder="Name" class="form-control" id="Name" name="Name" style="width:200px;height:28px;"/>
+                        </div>
+                        <div class="form-group">
+                           <input type="text" placeholder="Email" class="form-control" id="Email" name="Email" style="width:200px;height:28px;"/>
+                       </div>
+                       <div class="form-group">
+                          <textarea type="text" placeholder="Enter Message" class="form-control" id="Text" name="Text" style="width:200px;height:70px !important;"></textarea>
+
+                      </div>
+                      <button class="btn btn-primary" style="float:left;margin-right: 20px !important; font-family:'Nunito', sans-serif;">Submit</button>
+                      </form>
+
+                    </div>
+
+                </div>
+
+
+
+            </div>
+
+
+
+</body
+</html>

@@ -1,0 +1,67 @@
+{% extends 'index.html' %}
+{% block content %}
+{% load static %}
+<div class="row" style="margin:90px 0px 250px;">
+  {% for i in cart_lst %}{% for j in itemcountlst %}
+  {% if forloop.counter == forloop.parentloop.counter %}
+  <div class="col-lg-5" style="border:1px silver;border-radius:4px;background-color:white;margin:10px 0px 0px 10px;">
+<h4 style="color:black">{{i.BrandName}}  {{i.modelname}}({{i.color}},{{i.internalstorage}}) ({{i.ram}})</h4>
+  <a href="removefromcart/{{i.modelno}}" style="float:right;font-size:20px;color:black;"><span class="glyphicon glyphicon-trash"></span></a>
+  <span style="float:right;margin-right:300px;"><form method="POST" action="quantity/{{i.modelno}}">
+      {% csrf_token %}
+  <input type="number" min="1" max="9" style="width:30px !important;height:25px !important; border-radius:1px;" name="quantity">
+  </form></span>
+<span><h4>quantity:{{j.quantity}}</h4></span>
+
+    <img src="{{i.firstimage.url}}" style="height:160px; width:80px;">
+    <div style="float:right !important;">
+    <h3 style="color:green;float:right">&#8377<span>{{i.Price}}</span></h3><br>
+    <a href="checkout-{{i.modelno}}"  class="btn btn-warning btn-lg " style="margin:70px 0px 0px 0px; border-radius:2px !important;" name="button"> Checkout</a>
+  </div>
+  </div>
+  {% endif %}
+  {% endfor %}{% endfor %}
+
+  {% for i in cart_lst1 %}{% for j in itemcountlst %}
+  {% if forloop.counter == forloop.parentloop.counter %}
+    <div class="col-lg-5" style="border:1px silver;border-radius:4px;background-color:white;margin:10px 0px 0px 10px;">
+      <h4 style="color:black">{{i.BrandName}} {{i.Tvname}}({{i.color}})</h4>
+      <a href="removefromcart/{{i.modelno}}" style="float:right;font-size:20px;color:black;"><span
+          class="glyphicon glyphicon-trash"></span></a>
+      <span style="float:right;margin-right:250px;">
+        <form method="POST" action="quantity/{{i.modelno}}">
+          {% csrf_token %}
+          <input type="number" min="1" max="9" style="width:30px !important;height:25px !important; border-radius:1px;"
+            name="quantity">
+        </form>
+      </span>
+      <span>
+        <h4>quantity:{{j.quantity}}</h4>
+      </span>
+    
+      <img src="{{i.firstimage.url}}" style="height:120px; width:180px;">
+      <div style="float:right !important;">
+        <h3 style="color:green;float:right">&#8377<span>{{i.Price}}</span></h3><br>
+        <a href="checkout-{{i.modelno}}" class="btn btn-warning btn-lg " style="margin:70px 0px 0px 0px; border-radius:2px !important;"
+          name="button">Checkout</a>
+      </div>
+    </div>
+  {% endif %}
+  {% endfor %}{% endfor %}
+
+  <div class="col-lg-5" style="height: 240px;border:1px silver;border-radius:4px;background-color:white;margin:10px 0px 0px 10px;">
+    <!-- <h4>BUY IN ONE PACK</h4>
+    
+    <hr> -->
+    {% for i in cartlstx %}
+    <h4>Total Price<span style="float:right;color:green;">&#8377 {{i.Price}}</span></h4>
+    <hr>
+    <h4>Delivery Charges <span style="float:right;color:green;">&#8377 0</span></h4>
+    <hr>
+    <h4>Total <span style="float:right;color:green;">&#8377 {{i.Price}}</span></h4><hr>{% endfor %}
+    <a href="checkout-all" class="btn btn-warning btn-lg " style="float:right;; border-radius:2px !important;"
+      name="button"> Checkout </a>
+  </div>
+  
+</div>
+{% endblock %}
